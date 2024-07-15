@@ -1,0 +1,285 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+body{
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container{
+  position: relative;
+  top: 100px;
+  display: flex;
+  width: 600px;
+  height: 450px;
+  border-radius: 30px;
+  box-shadow: 35px 54px 100px #e9effd;
+
+}
+
+/*  The Left Side of the card.*/
+.container .show-score{
+  flex-basis: 300px;
+  background: linear-gradient( 135deg, hsl(252, 100%, 67%), #312cea 100%);
+  border-radius: 30px;
+  padding: 40px 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.container .show-score h3{
+  font-size: 19px;
+  color: #d0c6ff;
+  font-weight: 500;
+}
+
+.container .show-score .circle{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  padding: 30px;
+  margin-top: 30px;
+  background: linear-gradient(180deg,hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+  text-align:center;
+}
+
+.container .show-score .circle h1{
+  font-size: 60px;
+  color: aliceblue;
+}
+.container .show-score .circle p{
+  font-size: 16px;
+  font-weight: 500;
+  color: #887aff;
+}
+
+.container .show-score .opinion{
+  margin-top: 20px;
+  padding: 11px;
+  text-align: center;
+}
+
+.container .show-score .opinion h2{
+  font-size: 27px;
+  font-weight: 600;
+  color: aliceblue;
+}
+
+.container .show-score .opinion p{
+  margin-top: 15px;
+  font-size: 16px;
+  color: #c0beff;
+  font-weight: 400;
+
+}
+
+/*  The Right Side of the card.*/
+
+.container .detail-result{
+  padding: 45px 30px;
+  width: 50%;
+  border-radius: 0 30px 30px 0;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.container .detail-result h3{
+  font-size: 19px;
+  font-family: monospace;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: #383c4d;
+  margin-bottom: 15px;
+
+}
+
+.container .detail-result .results{
+  background-color: var(--i);
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+
+}
+
+.container .detail-result .results span:first-child{
+  position: relative;
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  color: var(--i);
+}
+
+.container .detail-result .results span:first-child svg{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px;
+}
+
+.container .detail-result .results span:nth-child(2){
+  position: relative;
+  color:#33374e ;
+  font-weight: 700;
+}
+
+.container .detail-result .results span:nth-child(2) span:first-child{
+  width: fit-content;
+  right: 45px;
+  color: #353848;
+}
+
+.container .detail-result .results span:nth-child(2) span:nth-child(2){
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: max-content;
+  color: #9ea0ad;
+  font-weight: 600;
+}
+
+.container .detail-result button{
+  position: relative;
+  border: none;
+  outline: none;
+  padding: 12px;
+  margin-top: 35px;
+  border-radius: 40px;
+  font-size: 14px;
+  color: #f7fcff;
+  background-color: #313a5b;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .4s;
+  box-shadow: 0 0 0 #7674e6 , inset 0 0 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.container .detail-result button:hover{
+  color: #313a5b;
+  box-shadow: 0 0 4px #7674e6 , inset 100px 100px 100px #f7fcff;
+}
+
+.container .detail-result button::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  border-radius: 0px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient( 180deg ,#6040fb,#382fea);
+  z-index: -1;
+  transition: .3s;
+}
+.container .detail-result button:active::before{
+  left: 0;
+}
+.container .detail-result button:active{
+  color: #f7fcff;
+}
+
+/*   Just for announcing the coder of this challenge.*/
+.attribution { 
+  position: absolute;
+  width: 200px;
+  padding: 2px;
+  bottom: 10px;
+  border-radius: 10px;
+  font-size: 11px; 
+  text-align: center; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.attribution::before{
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  border-radius: 10px;
+  background-color: #0037ff;
+  animation: rotate 6s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes rotate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.attribution .inner{
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  z-index: 1;
+}
+.attribution a {
+   color: hsl(228, 87%, 42%); 
+   font-weight: 800;
+   text-decoration: none;
+   font-size: 12px;
+   transition: .3s;
+  }
+  .attribution a:hover{
+    text-decoration: underline;
+    color: #3a51a7;
+  }
+
+  @media (max-width: 760px){
+   .container{
+    width: 100%;
+    flex-direction: column;
+    box-shadow: none;
+   }
+   .container .show-score{
+    position: relative;
+    top: -130px;
+   }
+   .container .detail-result{
+    width: 100%;
+    margin-top: -150px;
+   }
+   .container .detail-result .results{
+    margin-top: 15px;
+    padding: 20px;
+    font-size: 16px;
+   }
+   .container .detail-result .results span:first-child{
+    position: relative;
+    width: 40%;
+  }
+  .attribution{
+    position: absolute;
+    bottom: -70%;
+  }
+  }
+
+  @media (width: 768px){
+    .container{
+    top: 40px;
+   }
+ }
